@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="PREV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/when"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:text="언제"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prev"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/month1"
+            android:layout_width="140dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:entries="@array/월"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/when"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/day1"
+            android:layout_width="140dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="54dp"
+            android:entries="@array/일"
+            app:layout_constraintStart_toEndOf="@+id/month1"
+            app:layout_constraintTop_toBottomOf="@+id/bt_next"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="62dp"
+            android:text="부터"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/day1"
+            app:layout_constraintTop_toBottomOf="@+id/bt_next"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/month2"
+            android:layout_width="140dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="9dp"
+            android:entries="@array/월"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/month1"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/day2"
+            android:layout_width="140dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:entries="@array/일"
+            app:layout_constraintStart_toEndOf="@+id/month2"
+            app:layout_constraintTop_toBottomOf="@+id/day1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="29dp"
+            android:text="까지"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/day2"
+            app:layout_constraintTop_toBottomOf="@+id/from"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/nightsnum"
+            android:layout_width="43dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="9dp"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textSize="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/month2"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/nights"
+            android:layout_width="23dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="9dp"
+            android:text="박"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/nightsnum"
+            app:layout_constraintTop_toBottomOf="@+id/month2"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/daysnum"
+            android:layout_width="43dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@+id/nights"
+            app:layout_constraintTop_toBottomOf="@+id/month2"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/days"
+            android:layout_width="23dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="9dp"
+            android:text="일"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/daysnum"
+            app:layout_constraintTop_toBottomOf="@+id/month2"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/where"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="38dp"
+            android:text="어디서"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nightsnum"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="52dp"
+            android:text="친구"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/family"
+            app:layout_constraintTop_toBottomOf="@+id/강북"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/couple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="216dp"
+            android:text="연인"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/friend"
+            app:layout_constraintTop_toBottomOf="@+id/day2"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/who"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="18dp"
+            android:text="누구와"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/강남"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/강남"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="강남"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/where"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/강북"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="72dp"
+            android:text="강북"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/강남"
+            app:layout_constraintTop_toBottomOf="@+id/daysnum"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="자동차"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/transportation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="53dp"
+            android:text="대중교통"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/car"
+            app:layout_constraintTop_toBottomOf="@+id/friend"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/foot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="53dp"
+            android:text="도보"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/transportation"
+            app:layout_constraintTop_toBottomOf="@+id/couple"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:text="날씨"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/car"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/summer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="여름"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/winter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="54dp"
+            android:text="겨울"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/summer"
+            app:layout_constraintTop_toBottomOf="@+id/car"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/how"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="19dp"
+            android:text="어떻게"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/family"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="1dp"
+            android:text="가족"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/who"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
